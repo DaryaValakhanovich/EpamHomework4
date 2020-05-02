@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:properties"/>
+
+    <bean id="aBean" class="task1.entities.AClass">
+        <property name="someString" value="${someString}"/>
+    </bean>
+
+    <bean id="bBean" class="task1.entities.BClass">
+        <constructor-arg ref="aBean"/>
+    </bean>
+
+    <bean id="cBean" class="task1.entities.CClass" scope="singleton">
+        <lookup-method name="createDClass" bean="dBean"/>
+    </bean>
+
+    <bean id="dBean" class="task1.entities.DClass" scope="prototype"/>
+
+    <bean id="eBean" class="task1.entities.EClass" scope="prototype">
+        <replaced-method name="eMethod" replacer="eReplacer"/>
+    </bean>
+
+    <bean id="eReplacer" class="task1.EReplacer"/>
+
+    <bean id="fBean" class="task1.entities.FClass">
+        <property name="someString" value="${someString}"/>
+    </bean>
+
+    <bean id="fBeanPostProcessor" class="task1.FClassBeanPostProcessor"/>
+    <bean id="fInitDestroyBean" class="task1.FClassInitDestroyBean"/>
+</beans>

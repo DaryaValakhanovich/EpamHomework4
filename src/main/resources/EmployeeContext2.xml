@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="classpath:Context2.xml"/>
+
+    <bean id="initDestroyBean" class="task2.EmployeeInitDestroyBean">
+        <property name="employee" ref="employee1"/>
+    </bean>
+
+    <bean id="employee1" class="task2.factories.EmployeeFactoryBean">
+        <property name="name" value="Bob"/>
+        <property name="position" ref="position1"/>
+        <property name="age" value="#{T(java.lang.Math).random() * 100}"/>
+    </bean>
+
+    <bean id="employee2" class="task2.factories.EmployeeFactoryBean">
+        <property name="name" value="Kate"/>
+        <property name="position" ref="position1"/>
+        <property name="age" value="#{T(java.lang.Math).random() * 100}"/>
+    </bean>
+
+    <bean id="employee3" class="task2.factories.EmployeeFactoryBean">
+        <property name="name" value="Steve"/>
+        <property name="position" ref="position2"/>
+        <property name="age" value="#{T(java.lang.Math).random() * 100}"/>
+    </bean>
+
+    <bean id="employee4" class="task2.factories.EmployeeFactoryBean">
+        <property name="name" value="Kevin"/>
+        <property name="position" ref="position1"/>
+        <property name="age" value="#{T(java.lang.Math).random() * 100}"/>
+    </bean>
+
+    <bean class="task2.services.EmployeeService" id="employeeService1">
+        <property name="employees">
+            <util:set set-class="java.util.HashSet">
+                <ref bean="employee1"/>
+            </util:set>
+        </property>
+    </bean>
+</beans>

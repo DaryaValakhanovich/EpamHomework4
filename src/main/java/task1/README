@@ -1,0 +1,19 @@
+Результат работы:
+AClass{someString='string1'}
+BClass{aClass=AClass{someString='string1'}}
+CClass{dClass=null}
+CClass{dClass=DClass{string='qqq'}}
+DClass{string='null'}
+EClass{}
+Do smth else
+FClass{someString='string1'}
+
+Process finished with exit code 0
+
+Результат работы(log.file):
+FClass constructor
+FClass setSomeString string1
+FClass postProcessBeforeInitialization
+FClass postProcessAfterInitialization
+FClass. After properties set() was called.
+FClass. Bean was destroyed.

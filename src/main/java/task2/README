@@ -1,0 +1,19 @@
+Результат работы:
+Year 1:
+[Employee{name='Bob', position=Position{name='Programmer', salary=Salary{count=647,95}}, age=67}]
+Year 2:
+[Employee{name='Bob', position=Position{name='Programmer', salary=Salary{count=649,52}}, age=67}, Employee{name='Kate', position=Position{name='Programmer', salary=Salary{count=649,52}}, age=97}, Employee{name='Steve', position=Position{name='Designer', salary=Salary{count=316,68}}, age=36}]
+Year 3:
+[Employee{name='Kevin', position=Position{name='Programmer', salary=Salary{count=647,44}}, age=64}, Employee{name='Bob', position=Position{name='Programmer', salary=Salary{count=647,44}}, age=67}, Employee{name='Steve', position=Position{name='Designer', salary=Salary{count=318,42}}, age=36}]
+Year 4:
+[Employee{name='Kevin', position=Position{name='Programmer', salary=Salary{count=651,79}}, age=64}, Employee{name='Steve', position=Position{name='Designer', salary=Salary{count=313,17}}, age=36}]
+
+Process finished with exit code 0
+
+Результат работы(log.file):
+postProcessBeforeInitialization. Salary before changing: 645.9657847706228
+postProcessBeforeInitialization. Salary after changing: 652.3298996451289
+postProcessBeforeInitialization. Salary before changing: 588.633738923163
+postProcessBeforeInitialization. Salary after changing: 582.9545428924329
+Bean Bob. After properties set() was called.
+Bean Bob was destroyed.
